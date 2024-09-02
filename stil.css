@@ -1,0 +1,267 @@
+@font-face {
+    font-family: "Rethink";
+    src: url(/Fonts/RethinkSans-Bold.ttf);
+}
+
+body {
+    font-family: "Rethink";
+    background: url(/Pics/background.png) no-repeat center center fixed; /* Set the background image */
+    background-size: cover; /* Ensure the background covers the whole area */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    position: relative; /* Position the overlay relative to the body */
+
+}
+
+/* Overlay for the background image */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.676); 
+    z-index: -1;
+}
+
+.podcast-player {
+    border-radius: 8px;
+    width: 800px;
+    padding: 16px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative; /* Ensure it is above the overlay */
+    z-index: 1; /* Place the player content above the overlay */
+}
+
+.player-main {
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+    margin-bottom: px;
+}
+
+.cover-image {
+    flex-shrink: 0;
+    margin-right: 16px;
+}
+
+.cover-image img {
+    width: 160px;
+    height: 160px;
+    border-radius: 2px;
+    object-fit: cover;
+}
+
+.track-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-grow: 1;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#track-title {
+    margin: 0;
+    font-size: 25px;
+    color: #ffffff; /* White text to match the dark theme */
+    margin-bottom: 10px;
+}
+
+.track-description {
+    font-size: 14px; /* Smaller font size for description */
+    color: #dddddd; /* White text to match the dark theme */
+    margin: 0;
+    margin-top: -10px; /* Space between title and description */
+}
+
+
+.slider-container {
+    width: 100%;
+    margin-bottom: 3px;
+    position: relative;
+    margin-top: 50px;
+}
+
+.time-info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 10px;
+    color: #ffffff; /* White text to match dark theme */
+    position: absolute;
+    top: 5px; /* Adjust to move the time display above the slider */
+    left: 0;
+    right: 0;
+}
+
+#slider {
+    width: 100%;
+    height: 4px;
+    -webkit-appearance: none;
+    appearance: none;
+    background: linear-gradient(to right, #007bff 0%, #007bff 0%, #ddd 0%, #ddd 100%);
+    border-radius: 5px;
+    outline: none;
+    margin-top: 20px;
+    margin-left: 0px;
+}
+
+#slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 11px;
+    height: 11px;
+    background: #007bff;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+#slider::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    background: #007bff;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.player-controls-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: -7px;
+    margin-left: -7px;
+}
+
+.player-controls {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.player-controls button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin: -6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+}
+
+.player-controls button i {
+    font-size: 17px;
+    color: #ffffff; 
+}
+
+#play-pause {
+    width: 60px; /* Larger size for play/pause */
+    height: 60px; /* Larger size for play/pause */
+}
+
+
+
+#play-pause i {
+    color: #ffffff;
+    font-size: 26px; /* Larger icon size for play/pause */
+}
+
+#prev {
+    color: #ffffff;
+}
+
+#next {
+    color: #ffffff;
+}
+
+.player-controls button:focus {
+    outline: none;
+}
+
+/* Playlist section */
+.playlist {
+    margin-top: 20px;
+    width: 100%;
+    border-radius: 8px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.playlist h3 {
+    margin-left: 0px;
+    color: #ffffff; 
+}
+
+#playlist {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#playlist li {
+    padding: 10px;
+    cursor: pointer;
+    color: #ffffff; /* White text for playlist items */
+    border-bottom: 0px solid #444; /* Divider between playlist items */
+}
+
+#playlist li:hover {
+    background-color: #ffffff33; /* Highlight on hover */
+    border-radius: 5px;
+}
+
+/* Playlist Container */
+.playlist-container {
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.playlist-container h3 {
+    margin: 0;
+    color: #ffffff; /* White text to match the dark theme */
+}
+
+#playlist {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.playlist-item {
+    display: flex;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid #ddd;
+    color: #ffffff; /* White text to match the dark theme */
+}
+
+.playlist-item .play-pause-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #ffffff; 
+    font-size: 16px;
+    margin-right: 8px;
+}
+
+.playlist-item .play-pause-btn i {
+    font-size: 16px;
+}
+
+.playlist-item .track-title {
+    flex-grow: 1;
+}

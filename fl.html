@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Podcast Player</title>
+    <!-- Font Awesome Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="stil.css">
+</head>
+
+<body>
+    <div class="podcast-player">
+        <div class="player-main">
+            <div class="cover-image">
+                <img src="/Pics/cover.png" alt="Podcast Cover">
+            </div>
+            <div class="track-info">
+                <h2 id="track-title">Track Title</h2>
+                <p id="track-description" class="track-description">Track description will appear here</p>
+                <div class="slider-container">
+                    <div class="time-info">
+                        <span id="current-time">00:00</span>
+                        <span id="remaining-time">-00:00</span>
+                    </div>
+                    <input id="slider" type="range" min="0" max="100" value="0" step="0.1">
+                </div>
+                <div class="player-controls-container">
+                    <div class="player-controls">
+                        <!-- Previous Button -->
+                        <button id="prev" aria-label="Previous">
+                            <i class="fas fa-backward"></i>
+                        </button>
+
+                        <!-- Play/Pause Button -->
+                        <button id="play-pause" aria-label="Play/Pause">
+                            <i id="play-icon" class="fas fa-play"></i>
+                            <i id="pause-icon" class="fas fa-pause" style="display: none;"></i>
+                        </button>
+
+                        <!-- Next Button -->
+                        <button id="next" aria-label="Next">
+                            <i class="fas fa-forward"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <audio id="audio" src="/Music/test.wav"></audio>
+
+        <!-- Playlist Section -->
+        <div class="playlist-container">
+            <h3>Demo Tracks</h3>
+            <ul id="playlist"></ul>
+        </div>
+    </div>
+    <script src="java.js"></script>
+</body>
+</html>
